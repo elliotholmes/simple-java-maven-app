@@ -1,5 +1,5 @@
 pipeline {
-    agent none
+    agent any
     stages {
         stage('Build') { 
             agent {
@@ -12,8 +12,7 @@ pipeline {
                 sh 'mvn -B -DskipTests clean package' 
             }
         }
-        stage('Deploy') { 
-            agent none
+        stage('Deploy') {
             steps {
                 sh 'cp /var/jenkins_home/workspace/simple-java-maven-app/target/my-app-1.0-SNAPSHOT.jar /' 
             }
