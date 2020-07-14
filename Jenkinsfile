@@ -14,7 +14,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'echo ${WORKSPACE}' 
+                sh 'cp ${WORKSPACE}/target/*.jar /' 
             }
         }
     }
